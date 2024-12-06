@@ -15,191 +15,186 @@
 </head>
 
 <body>
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
-		<div class="container">
-			<a class="navbar-brand d-flex align-items-center" href="index.html">
-				<img src="img/icon_black.png" alt="Autobahn-Logo" width="40" height="40"
-					class="d-inline-block align-text-top me-2">
-				<span class="d-none d-sm-inline fw-bold">Autobahn-Informationsportal</span>
-			</a>
-			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-				aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarContent">
-				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-					<li class="nav-item">
-						<a class="nav-link" href="index.html">
-							<i class="bi bi-house-door me-1"></i><span class="d-lg-none d-xl-inline">Startseite</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="autobahn.html">
-							<i class="bi bi-sign-merge-right-fill me-1"></i><span class="d-lg-none d-xl-inline">Die
-								Autobahn in Zahlen</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="roadworks.html">
-							<i class="bi bi-cone-striped me-1"></i><span class="d-lg-none d-xl-inline">Aktuelle
-								Baustellen</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="about.html">
-							<i class="bi bi-info-circle me-1"></i><span class="d-lg-none d-xl-inline">Über dieses
-								Projekt</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- Navbar END-->
-
-	<!-- Main content -->
-	<div class="container mt-4">
-		<h1 class="mb-4">Baustellenübersicht</h1>
-
-		<!-- Große Karte und Autobahnauswahl -->
-		<div class="card h-100 d-flex flex-column shadow mb-4">
-			<div class="card-header p-0">
-				<div id="map" style="height: 400px;" class="card-img-top card-map"></div>
-			</div>
-			<div class="card-body d-flex flex-column p-0">
-				<div class="form-floating">
-					<select class="form-select" id="autobahnSelect" aria-label="Autobahn auswählen"
-						style="border-top-left-radius: 0; border-top-right-radius: 0;">
-						<option value="" selected disabled>Bitte wählen...</option>
-					</select>
-					<label for="autobahnSelect">Wählen Sie eine Autobahn:</label>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- Autobahn Auswahlform -->
-		<!-- <div class="form-floating mb-3">
-			<select class="form-select" id="autobahnSelect" aria-label="Autobahn auswählen">
-				<option value="" selected disabled>Bitte wählen...</option>
-			</select>
-			<label for="autobahnSelect">Wählen Sie eine Autobahn:</label>
-		</div> -->
-		<!-- Hauptkarte -->
-		<!-- <div id="map" style="height: 400px;" class="mb-4"></div> -->
-
-
-
-		<!-- Baustellen Container, beinhaltet Cards mit Baustellen der selektierten Autobahn -->
-		<!-- und wird von der api-roadworks.js befüllt -->
-		<div id="baustellenContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>
-		<!-- Infos/Warnings -->
-		<div id="selectAutobahnInfo" class="alert alert-info mt-3" role="alert" style="display: none;">
-			Bitte wählen Sie eine Autobahn aus, um Baustelleninformationen anzuzeigen.
-		</div>
-		<div id="noBaustellenWarning" class="alert alert-warning mt-3" role="alert" style="display: none;">
-			Für die ausgewählte Autobahn liegen keine Baustelleninformationen vor.
-		</div>
-	</div>
-	<!-- Main content END -->
-
-	<!--Footer -->
-	<!-- Kontakt, rechtliche Informationen Links -->
-	<footer class="pt-4 bg-secondary text-light">
-		<div class="container pb-2">
-			<div class="row">
-				<!--linke Spalte -->
-				<div class="col-md-4 mb-3 mb-md-0">
-					<h6 class="mb-3"><strong>Bleiben Sie in Verbindung.</strong></h6>
-					<p>
-						<a href="https://github.com/mpotthar"
-							class="link-info link-offset-2 link-underline-opacity-0 d-block mb-2">
-							<i class="bi bi-github"></i> Github
-						</a>
-						<a href="https://www.linkedin.com/in/marcelpottharst/"
-							class="link-info link-offset-2 link-underline-opacity-0 d-block">
-							<i class="bi bi-linkedin"></i> LinkedIn
-						</a>
-					</p>
-				</div>
-				<!--mittlere Spalte -->
-				<div class="col-md-4 mb-3 mb-md-0 text-md-center">
-					<h6 class="mb-3 text-md-center"><strong>Fragen oder Anregungen?</strong></h6>
-					<p>
-						<a href="mailto:autobahn-infoportal@marcel.pottharst.net"
-							class="link-info link-offset-2 link-underline-opacity-0">
-							<i class="bi bi-envelope"></i> autobahn-<wbr>infoportal<wbr>@marcel.pottharst.net
-						</a>
-					</p>
-				</div>
-				<!--rechte Spalte -->
-				<div class="col-md-4 mb-3 mb-md-0 text-md-end">
-					<h6 class="mb-3 text-md-end"><strong>Rechtliche Informationen</strong></h6>
-					<a href="#" data-bs-toggle="modal" data-bs-target="#legalModal"
-						class="link-info link-underline-opacity-0">
-						<i class="bi bi-file-earmark-text"></i> Datenquellen und Bildrechte
+	<div id="page-container">
+		<main id="content-wrap">
+			<!-- Navbar -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
+				<div class="container">
+					<a class="navbar-brand d-flex align-items-center" href="index.html">
+						<img src="img/icon_black.png" alt="Autobahn-Logo" width="40" height="40"
+							class="d-inline-block align-text-top me-2">
+						<span class="d-none d-sm-inline fw-bold">Autobahn-Informationsportal</span>
 					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">
+									<i class="bi bi-house-door me-1"></i><span
+										class="d-lg-none d-xl-inline">Startseite</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="autobahn.html">
+									<i class="bi bi-sign-merge-right-fill me-1"></i><span
+										class="d-lg-none d-xl-inline">Die
+										Autobahn in Zahlen</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="roadworks.html">
+									<i class="bi bi-cone-striped me-1"></i><span class="d-lg-none d-xl-inline">Aktuelle
+										Baustellen</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">
+									<i class="bi bi-info-circle me-1"></i><span class="d-lg-none d-xl-inline">Über
+										dieses
+										Projekt</span>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
-			</div>
-		</div>
-		<!-- Copyright Information -->
-		<div class="py-2 mb-0 mt-2 bg-dark text-light">
-			<p class="text-center mb-0">© 2024 Marcel Pottharst</p>
-		</div>
-	</footer>
+			</nav>
+			<!-- Navbar END-->
 
-	<!-- Modal -->
-	<div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="legalModalLabel"><i class="bi bi-file-earmark-text"></i> Rechtliche
-						Hinweise</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			<!-- Main content -->
+			<div class="container mt-4">
+				<h1 class="mb-4">Baustellenübersicht</h1>
+
+				<!-- Große Karte und Autobahnauswahl -->
+				<div class="card h-100 d-flex flex-column shadow mb-4">
+					<div class="card-header p-0">
+						<div id="map" style="height: 400px;" class="card-img-top card-map"></div>
+					</div>
+					<div class="card-body d-flex flex-column p-0">
+						<div class="form-floating">
+							<select class="form-select" id="autobahnSelect" aria-label="Autobahn auswählen"
+								style="border-top-left-radius: 0; border-top-right-radius: 0;">
+								<option value="" selected disabled>Bitte wählen...</option>
+							</select>
+							<label for="autobahnSelect">Wählen Sie eine Autobahn:</label>
+						</div>
+					</div>
 				</div>
-				<!-- Inhalt des Modals -->
-				<div class="modal-body">
-					<p>
-						<strong>Datenquelle: </strong>
-						<a href="https://autobahn.api.bund.dev/" class="text-primary text-decoration-none">Autobahn App
-							API</a>
-					</p>
-					<p>
-						<strong>Bildrechte:</strong>
-						<!--unordered list -->
-					<ul>
-						<li><a href="https://icons8.com/icon/40998/autobahn"
-								class="text-primary text-decoration-none">Autobahn</a> Icon von
-							<a href="https://icons8.com" class="text-primary text-decoration-none">Icons8</a>
-						</li>
-						<li>Bild von <a
-								href="https://pixabay.com/de/users/wikimediaimages-1185597/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=837813"
-								class="text-primary text-decoration-none">WikimediaImages</a> auf <a
-								href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=837813"
-								class="text-primary text-decoration-none">Pixabay</a></li>
-						<li>Bild von <a
-								href="https://pixabay.com/de/users/frank_rietsch-638998/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6072218"
-								class="text-primary text-decoration-none">Frank Rietsch</a> auf <a
-								href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6072218"
-								class="text-primary text-decoration-none">Pixabay</a></li>
-						<li>Bild von <a
-								href="https://unsplash.com/de/@egla?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-								class="text-primary text-decoration-none">Hannes Egler</a> auf <a
-								href="https://unsplash.com/de/fotos/auto-auf-der-strasse-3iHW2HLqTXU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-								class="text-primary text-decoration-none">Unsplash</a></li>
-					</ul>
-					</p>
+
+				<!-- Baustellen Container, beinhaltet Cards mit Baustellen der selektierten Autobahn -->
+				<!-- und wird von der api-roadworks.js befüllt -->
+				<div id="baustellenContainer" class="row row-cols-1 row-cols-md-3 g-4"></div>
+				<!-- Infos/Warnings -->
+				<div id="selectAutobahnInfo" class="alert alert-info mt-3" role="alert" style="display: none;">
+					Bitte wählen Sie eine Autobahn aus, um Baustelleninformationen anzuzeigen.
 				</div>
-				<!-- Footer des Modals, im geöffneten Zustand sichtbar, durch Linie getrennt (Bootstrap) -->
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+				<div id="noBaustellenWarning" class="alert alert-warning mt-3" role="alert" style="display: none;">
+					Für die ausgewählte Autobahn liegen keine Baustelleninformationen vor.
+				</div>
+			</div>
+			<!-- Main content END -->
+		</main>
+
+		<!--Footer -->
+		<!-- Kontakt, rechtliche Informationen Links -->
+		<footer id="footer" class="pt-4 bg-secondary text-light">
+			<div class="container pb-2">
+				<div class="row">
+					<!--linke Spalte -->
+					<div class="col-md-4 mb-3 mb-md-0">
+						<h6 class="mb-3"><strong>Bleiben Sie in Verbindung.</strong></h6>
+						<p>
+							<a href="https://github.com/mpotthar"
+								class="link-info link-offset-2 link-underline-opacity-0 d-block mb-2">
+								<i class="bi bi-github"></i> Github
+							</a>
+							<a href="https://www.linkedin.com/in/marcelpottharst/"
+								class="link-info link-offset-2 link-underline-opacity-0 d-block">
+								<i class="bi bi-linkedin"></i> LinkedIn
+							</a>
+						</p>
+					</div>
+					<!--mittlere Spalte -->
+					<div class="col-md-4 mb-3 mb-md-0 text-md-center">
+						<h6 class="mb-3 text-md-center"><strong>Fragen oder Anregungen?</strong></h6>
+						<p>
+							<a href="mailto:autobahn-infoportal@marcel.pottharst.net"
+								class="link-info link-offset-2 link-underline-opacity-0">
+								<i class="bi bi-envelope"></i> autobahn-<wbr>infoportal<wbr>@marcel.pottharst.net
+							</a>
+						</p>
+					</div>
+					<!--rechte Spalte -->
+					<div class="col-md-4 mb-3 mb-md-0 text-md-end">
+						<h6 class="mb-3 text-md-end"><strong>Rechtliche Informationen</strong></h6>
+						<a href="#" data-bs-toggle="modal" data-bs-target="#legalModal"
+							class="link-info link-underline-opacity-0">
+							<i class="bi bi-file-earmark-text"></i> Datenquellen und Bildrechte
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Copyright Information -->
+			<div class="py-2 mb-0 mt-2 bg-dark text-light">
+				<p class="text-center mb-0">© 2024 Marcel Pottharst</p>
+			</div>
+		</footer>
+
+		<!-- Modal -->
+		<div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="legalModalLabel"><i class="bi bi-file-earmark-text"></i> Rechtliche
+							Hinweise</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<!-- Inhalt des Modals -->
+					<div class="modal-body">
+						<p>
+							<strong>Datenquelle: </strong>
+							<a href="https://autobahn.api.bund.dev/" class="text-primary text-decoration-none">Autobahn
+								App
+								API</a>
+						</p>
+						<p>
+							<strong>Bildrechte:</strong>
+							<!--unordered list -->
+						<ul>
+							<li><a href="https://icons8.com/icon/40998/autobahn"
+									class="text-primary text-decoration-none">Autobahn</a> Icon von
+								<a href="https://icons8.com" class="text-primary text-decoration-none">Icons8</a>
+							</li>
+							<li>Bild von <a
+									href="https://pixabay.com/de/users/wikimediaimages-1185597/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=837813"
+									class="text-primary text-decoration-none">WikimediaImages</a> auf <a
+									href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=837813"
+									class="text-primary text-decoration-none">Pixabay</a></li>
+							<li>Bild von <a
+									href="https://pixabay.com/de/users/frank_rietsch-638998/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6072218"
+									class="text-primary text-decoration-none">Frank Rietsch</a> auf <a
+									href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6072218"
+									class="text-primary text-decoration-none">Pixabay</a></li>
+							<li>Bild von <a
+									href="https://unsplash.com/de/@egla?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+									class="text-primary text-decoration-none">Hannes Egler</a> auf <a
+									href="https://unsplash.com/de/fotos/auto-auf-der-strasse-3iHW2HLqTXU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+									class="text-primary text-decoration-none">Unsplash</a></li>
+						</ul>
+						</p>
+					</div>
+					<!-- Footer des Modals, im geöffneten Zustand sichtbar, durch Linie getrennt (Bootstrap) -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+					</div>
 				</div>
 			</div>
 		</div>
+		<!--Footer END-->
 	</div>
-	<!--Footer END-->
-
 	<!-- Externe Ressourcen -->
 	<!-- Lädt das Bootstrap JavaScript Bundle, das alle Bootstrap-Funktionalitäten enthält -->
 	<!-- Dies ermöglicht interaktive Komponenten wie Dropdowns, Modals, Tooltips etc. -->

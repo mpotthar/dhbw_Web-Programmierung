@@ -64,3 +64,27 @@
 	font-size: 12px;
 	display: block;
 }
+
+/* Handling für den Footer */
+/* Darstellung am unteren Bildschirmrand */
+html, body {
+	height: 100%; /* Höhe des Viewports */
+	margin: 0;
+  }
+  
+  /* Flexbox-Container für die Seite, nimmt volle Höhe des Viewports ein */
+  #page-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+  }
+  
+  /* Flexbox-Container für den Inhalt, nimmt den verfügbaren Platz ein */
+  #content-wrap {
+	flex: 1 0 auto;
+  }
+  
+  #footer {
+	flex-shrink: 0; /* Kein Shrinken des Footers */
+  }
+  
