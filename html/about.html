@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#0dcaf0" />
+	<title>Über dieses Projekt | Autobahn-Informationsportal</title>
+	<link rel="icon" href="img/icon_white.png" type="image/png">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+	<div id="page-container">
+		<main id="content-wrap">
+			<!-- Navbar -->
+			<nav class="navbar navbar-expand-lg navbar-light bg-info sticky-top">
+				<div class="container">
+					<a class="navbar-brand d-flex align-items-center" href="index.html">
+						<img src="img/icon_black.png" alt="Autobahn-Logo" width="40" height="40"
+							class="d-inline-block align-text-top me-2">
+						<span class="d-none d-sm-inline fw-bold">Autobahn-Informationsportal</span>
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+						data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a class="nav-link" href="index.html">
+									<i class="bi bi-house-door me-1"></i><span
+										class="d-lg-none d-xl-inline">Startseite</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="autobahn.html">
+									<i class="bi bi-sign-merge-right-fill me-1"></i><span
+										class="d-lg-none d-xl-inline">Die
+										Autobahn in Zahlen</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="roadworks.html">
+									<i class="bi bi-cone-striped me-1"></i><span class="d-lg-none d-xl-inline">Aktuelle
+										Baustellen</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="about.html">
+									<i class="bi bi-info-circle me-1"></i><span class="d-lg-none d-xl-inline">Über
+										dieses
+										Projekt</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- Navbar END-->
+
+			<!-- Main content -->
+			<div class="container mt-4">
+				<h1 class="mb-4">Über dieses Projekt</h1>
+
+				<p class="lead mb-4">Willkommen auf der Informationsseite des Autobahn-Informationsportals. Hier finden
+					Sie
+					Antworten auf häufig gestellte Fragen zu diesem Projekt.</p>
+				<!-- Accordion mit FAQ Artikeln -->
+				<div class="accordion" id="faqAccordion">
+					<!-- Accordion Item, entspricht einem Artikel -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingOne">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								Woher stammen die angezeigten Daten?
+							</button>
+						</h2>
+						<!-- Inhalt des ersten FAQ Artikels -->
+						<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Die auf dieser Website angezeigten Daten stammen von der offiziellen Autobahn App API.
+								Diese API
+								wird von der Autobahn GmbH des Bundes bereitgestellt und bietet aktuelle Informationen
+								über das
+								deutsche Autobahnnetz.
+							</div>
+						</div>
+					</div>
+					<!-- Ein weiterer FAQ Artikel... -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingTwo">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								Welche zwei Endpoints der API wurden verwendet?
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Für dieses Projekt wurden zwei spezifische Endpoints der Autobahn API genutzt:
+								<ol>
+									<li>Der Endpoint für die Liste aller Autobahnen:
+										<code>https://verkehr.autobahn.de/o/autobahn/</code>
+									</li>
+									<li>Der Endpoint für Baustelleninformationen einer spezifischen Autobahn:
+										<code>https://verkehr.autobahn.de/o/autobahn/{autobahn_id}/services/roadworks</code>
+									</li>
+								</ol>
+								Diese Endpoints liefern die notwendigen Daten für die Darstellung der Autobahnen und
+								ihrer
+								aktuellen Baustellen nebst Baustellendetails.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingThree">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								Warum wurde für diese Website Bootstrap verwendet?
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Bootstrap wurde für diese Website aus mehreren Gründen gewählt:
+								<ul>
+									<li>Responsive Design: Bootstrap ermöglicht eine einfache Erstellung von
+										mobilfreundlichen,
+										responsiven Layouts.</li>
+									<li>Konsistentes Erscheinungsbild: Es bietet vordefinierte Stile und Komponenten für
+										ein
+										einheitliches Design.</li>
+									<li>Schnelle Entwicklung: Mit Bootstrap ist es möglich, schnell ein professionelles
+										Layout
+										zu erstellen.</li>
+									<li>Große Community: Es gibt eine umfangreiche Dokumentation und viele Ressourcen
+										für
+										Entwickler.</li>
+									<li>Kompatibilität: Bootstrap funktioniert gut mit verschiedenen Browsern und
+										Geräten.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingFour">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								Was ist der Hauptnutzen dieser Website?
+							</button>
+						</h2>
+						<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Der Hauptnutzen unserer Website besteht darin, Autofahrern und anderen Interessierten
+								einen
+								schnellen und einfachen Überblick über aktuelle Baustellen auf deutschen Autobahnen zu
+								geben.
+								Nutzer können:
+								<ul>
+									<li>spezifische Autobahnen auswählen und deren Baustellen einsehen</li>
+									<li>detaillierte Informationen zu jeder Baustelle abrufen</li>
+									<li>die Lage der Baustellen auf interaktiven Karten visualisieren</li>
+									<li>ihre Reisen besser planen und potenzielle Verzögerungen antizipieren</li>
+								</ul>
+								Ziel dieser Website ist es, die Reiseplanung zu erleichtern und die Sicherheit auf
+								deutschen
+								Autobahnen zu erhöhen.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingFive">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								Wie oft werden die Daten aktualisiert?
+							</button>
+						</h2>
+						<div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Die Daten auf dieser Website werden in Echtzeit von der Autobahn App API abgerufen.
+								Jedes Mal,
+								wenn ein Nutzer eine spezifische Autobahn auswählt oder die Seite aktualisiert, werden
+								die
+								neuesten verfügbaren Informationen von der API angefordert. Die Häufigkeit der
+								Aktualisierungen
+								der API selbst hängt von der Autobahn GmbH des Bundes ab.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingSix">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+								Wie wurde die Kartenintegration realisiert?
+							</button>
+						</h2>
+						<div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Die Kartenintegration wurde mit Leaflet.js realisiert, einer
+								Open-Source-JavaScript-Bibliothek
+								für interaktive Karten. OpenStreetMap wurde als Kartendatenquelle verwendet. Für jede
+								Baustelle
+								wird eine individuelle Karte erstellt, die den genauen Standort und, falls verfügbar,
+								die
+								Geometrie der Baustelle anzeigt. Die Hauptkarte zeigt eine Übersicht aller Baustellen
+								auf der
+								ausgewählten Autobahn.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingSeven">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+								data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+								Sind die angezeigten Daten korrekt und zuverlässig?
+							</button>
+						</h2>
+						<div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+							data-bs-parent="#faqAccordion">
+							<div class="accordion-body">
+								Die auf dieser Website dargestellten Informationen basieren auf Daten der Autobahn App
+								API.
+								Trotz sorgfältiger Verarbeitung kann keine Gewähr für die Richtigkeit, Vollständigkeit
+								und
+								Aktualität der angezeigten Daten übernommen werden. Die Daten werden von einer externen
+								Quelle
+								bezogen und können möglicherweise nicht den aktuellsten Stand wiedergeben. Auch ist es
+								möglich,
+								dass Daten nicht oder mehrfach über die API ausgeliefert werden, da entsprechende
+								Datensätze
+								nicht bzw. redundant vorhanden sind. Dies betrifft auch die Auflistung der Autobahnen.
+								Eine
+								Anzeige von N/A im Abschnitt deutet darauf hin, dass seitens der API keine Daten
+								vorliegen. Dies
+								ist normalerweise dann der Fall, wenn sich die Baustelle in einer Auf- bzw. Abfahrt
+								befindet.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br />
+			<!-- Main content END-->
+		</main>
+		<!--Footer -->
+		<!-- Kontakt, rechtliche Informationen Links -->
+		<footer id="footer" class="pt-4 bg-secondary text-light">
+			<div class="container pb-2">
+				<div class="row">
+					<!--linke Spalte -->
+					<div class="col-md-4 mb-3 mb-md-0">
+						<h6 class="mb-3"><strong>Bleiben Sie in Verbindung.</strong></h6>
+						<p>
+							<a href="https://github.com/mpotthar"
+								class="link-info link-offset-2 link-underline-opacity-0 d-block mb-2">
+								<i class="bi bi-github"></i> Github
+							</a>
+							<a href="https://www.linkedin.com/in/marcelpottharst/"
+								class="link-info link-offset-2 link-underline-opacity-0 d-block">
+								<i class="bi bi-linkedin"></i> LinkedIn
+							</a>
+						</p>
+					</div>
+					<!--mittlere Spalte -->
+					<div class="col-md-4 mb-3 mb-md-0 text-md-center">
+						<h6 class="mb-3 text-md-center"><strong>Fragen oder Anregungen?</strong></h6>
+						<p>
+							<a href="mailto:autobahn-infoportal@marcel.pottharst.net"
+								class="link-info link-offset-2 link-underline-opacity-0">
+								<i class="bi bi-envelope"></i> autobahn-<wbr>infoportal<wbr>@marcel.pottharst.net
+							</a>
+						</p>
+					</div>
+					<!--rechte Spalte -->
+					<div class="col-md-4 mb-3 mb-md-0 text-md-end">
+						<h6 class="mb-3 text-md-end"><strong>Rechtliche Informationen</strong></h6>
+						<a href="#" data-bs-toggle="modal" data-bs-target="#legalModal"
+							class="link-info link-underline-opacity-0">
+							<i class="bi bi-file-earmark-text"></i> Datenquellen und Bildrechte
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Copyright Information -->
+			<div class="py-2 mb-0 mt-2 bg-dark text-light">
+				<p class="text-center mb-0">© 2024 Marcel Pottharst</p>
+			</div>
+		</footer>
+
+		<!-- Modal -->
+		<div class="modal fade" id="legalModal" tabindex="-1" aria-labelledby="legalModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="legalModalLabel"><i class="bi bi-file-earmark-text"></i> Rechtliche
+							Hinweise</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<!-- Inhalt des Modals -->
+					<div class="modal-body">
+						<p>
+							<strong>Datenquelle: </strong>
+							<a href="https://autobahn.api.bund.dev/" class="text-primary text-decoration-none">Autobahn
+								App
+								API</a>
+						</p>
+						<p>
+							<strong>Bildrechte:</strong>
+							<!--unordered list -->
+						<ul>
+							<li><a href="https://icons8.com/icon/40998/autobahn"
+									class="text-primary text-decoration-none">Autobahn</a> Icon von
+								<a href="https://icons8.com" class="text-primary text-decoration-none">Icons8</a>
+							</li>
+							<li>Bild von <a
+									href="https://pixabay.com/de/users/wikimediaimages-1185597/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=837813"
+									class="text-primary text-decoration-none">WikimediaImages</a> auf <a
+									href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=837813"
+									class="text-primary text-decoration-none">Pixabay</a></li>
+							<li>Bild von <a
+									href="https://pixabay.com/de/users/frank_rietsch-638998/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6072218"
+									class="text-primary text-decoration-none">Frank Rietsch</a> auf <a
+									href="https://pixabay.com/de//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=6072218"
+									class="text-primary text-decoration-none">Pixabay</a></li>
+							<li>Bild von <a
+									href="https://unsplash.com/de/@egla?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+									class="text-primary text-decoration-none">Hannes Egler</a> auf <a
+									href="https://unsplash.com/de/fotos/auto-auf-der-strasse-3iHW2HLqTXU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+									class="text-primary text-decoration-none">Unsplash</a></li>
+						</ul>
+						</p>
+					</div>
+					<!-- Footer des Modals, im geöffneten Zustand sichtbar, durch Linie getrennt (Bootstrap) -->
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Footer END-->
+	</div>
+	<!-- Externe Ressourcen -->
+	<!-- Lädt das Bootstrap JavaScript Bundle, das alle Bootstrap-Funktionalitäten enthält -->
+	<!-- Dies ermöglicht interaktive Komponenten wie Dropdowns, Modals, Tooltips etc. -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<!-- Externe Ressourcen END-->
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+/* Anpassungen für Carousel in index.html */
+#carouselStartseite {
+	width: 100%;
+	height: 80vh; /* Für größere Bildschirme */
+	min-height: 300px;
+  }
+  
+#carouselStartseite .carousel-inner,
+#carouselStartseite .carousel-item {
+	height: 100%;
+}
+  
+#carouselStartseite .carousel-item img {
+	object-fit: cover;
+	object-position: center;
+	width: 100%;
+	height: 100%;
+	filter: brightness(50%);
+}
+
+#carouselStartseite .carousel-caption {
+	bottom: 40px;
+}
+  
+/* Media Query für kleinere Bildschirme */
+@media (max-width: 768px) {
+#carouselStartseite {
+		height: 60vh; /* Reduzierte Höhe für Mobilgeräte */
+		min-height: 200px;
+	}
+}
+
+/* Anpassung Aktiv-Farbe der Accordions in about.html */
+.accordion {
+	--bs-accordion-active-bg: #0dcaf0;
+}
+
+/* Für Fortschrittskreise in autobahn.html */
+.circle-progress {
+	position: relative;
+	width: 120px;
+	height: 120px;
+	margin: 0 auto;
+}
+.circle-progress canvas {
+	width: 120px;
+	height: 120px;
+}
+.circle-progress-value {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	line-height: 1.2;
+}
+.circle-progress-value .number {
+	font-size: 20px;
+	font-weight: bold;
+	display: block;
+	margin-bottom: 2px;
+}
+.circle-progress-value .unit {
+	font-size: 12px;
+	display: block;
+}
+
+/* Handling für den Footer */
+/* Darstellung am unteren Bildschirmrand */
+html, body {
+	height: 100%; /* Höhe des Viewports */
+	margin: 0;
+}
+  
+/* Flexbox-Container für die Seite, nimmt volle Höhe des Viewports ein */
+#page-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+  
+/* Flexbox-Container für den Inhalt, nimmt den verfügbaren Platz ein */
+#content-wrap {
+	flex: 1 0 auto;
+}
+  
+#footer {
+	flex-shrink: 0; /* Kein Shrinken des Footers */
+}
